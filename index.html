@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashyap Kumar</title>
+
+    <meta name="description" content="This is a personal website of a tech enthusiast named Kashyap Kumar">
+    <meta name="author" content="Kashyap Kumar" />
+    <meta name="tags" content="Kashyap Kumar, Programmer, Coder, Full Stack Developer" />
+    <link rel="canonical" href="https://kashyapkumar.netlify.app">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="profilePic.png">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .loader{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #b2e0ff;
+            display: grid;
+            place-items: center;
+            z-index: 2;
+        }
+        .loader div{
+            position: relative;
+            background: #000;
+        }
+        .loader div span{
+            position: absolute;
+            width: 20px;
+            background-color: red;
+            bottom: 0;left: 50%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            transform-origin: bottom;
+        }
+        .loader div span:nth-child(1){
+            transform: translateX(-50%);
+            background-color: orangered;
+            height: 60px;
+            animation: anim1 2s linear infinite;
+        }
+        .loader div span:nth-child(2){
+            transform: translateX(-20%);
+            background-color: #00fd00;            
+            height: 30px;
+            animation: anim2 2s linear infinite;
+            animation-delay: 0.5s;
+        }
+        .loader div span:nth-child(3){
+            transform: translateX(-80%);
+            background-color: rgb(19, 53, 245);
+            height: 45px;
+            animation: anim3 2s linear infinite;
+            animation-delay: 1s;
+        }
+        @keyframes anim1 {
+            0%, 100%{transform: translateX(-50%) scaleY(0);}
+            50%{transform: translateX(-50%) scaleY(1);}
+        }
+        @keyframes anim2 {
+            0%, 100%{transform: translateX(-20%) scaleY(0);}
+            50%{transform: translateX(-20%) scaleY(1);}
+        }
+        @keyframes anim3 {
+            0%, 100%{transform: translateX(-80%) scaleY(0);}
+            50%{transform: translateX(-80%) scaleY(1);}
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div>
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="profilePhoto"></div>
+            <h1 class="userName">Kashyap Kumar</h1>
+            <p class="description"></p>
+            <div class="contactOptions">
+                <a href="mailto:kashyapkumar22119@gmail.com?subject=Hi%20Kashyap&body=I%20Love%20You." id="email">Email</a>
+                <a href="tel:" id="phone" onclick="alert('Do not want to share for now. Please use the email option!')">Phone</a>
+            </div>
+        </div>
+        <div class="navBar">
+            <span class="tabLink about active">about</span>
+            <span class="tabLink education">education</span>
+            <span class="tabLink projects">projects</span>
+            <span class="tabLink skills">skills</span>
+        </div>
+        <div class="content">
+            <div class="tabContent openByDefault">
+                <div id="about"></div>
+            </div>
+            <div class="tabContent">
+                <div id="education"></div>
+            </div>
+            <div class="tabContent">
+                <div id="projects"></div>
+            </div>
+            <div class="tabContent">
+                <div id="skills"></div>
+            </div>
+            <!-- all the contents are included using js -->
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
