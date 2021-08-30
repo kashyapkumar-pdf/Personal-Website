@@ -1,20 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #23282e;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
 /* ============== header - start =================*/
-.header{
+.header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
-.profilePhoto{
+
+.profilePhoto {
     width: 176px;
     height: 176px;
     background-color: #30373f;
@@ -25,7 +35,8 @@ body{
     background-image: url("profilePic.png");
     background-size: cover;
 }
-.profilePhoto::after{
+
+.profilePhoto::after {
     content: "Eagle V2.0";
     padding: 5px 20px;
     background-color: #30373f;
@@ -35,73 +46,96 @@ body{
     position: absolute;
     bottom: 0;
     left: 50%;
+    -webkit-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
     transform: translate(-50%, 50%);
     white-space: nowrap;
 }
-.userName{
+
+.userName {
     background-color: #30373f;
     padding: 10px 20px;
     margin: auto;
     color: #06D6A0;
     font-size: 18px;
 }
-.description{
+
+.description {
     color: #a1a1a1;
     font-size: 16px;
     margin: 20px;
     text-align: center;
 }
-.contactOptions{
+
+.contactOptions {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
-.contactOptions a{
+
+.contactOptions a {
     padding: 5px 25px;
     margin: 0 10px;
     text-decoration: none;
     border: 2px solid #06D6A0;
     cursor: pointer;
 }
-.contactOptions a:first-child{
+
+.contactOptions a:first-child {
     background-color: #06D6A0;
-    color: aliceblue;
+    color: #23282e;
+    font-weight: 600;
 }
-.contactOptions a:nth-child(2){
+
+.contactOptions a:nth-child(2) {
     color: #06D6A0;
 }
+
 /* ============== header - end =================*/
 
 
 
 /* ============== navBar - start =================*/
-.navBar{
+.navBar {
     width: 90%;
     background-color: #30373f;
     margin: 10px auto;
     padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
     color: #a1a1a1;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
 }
-.navBar span{
+
+.navBar span {
     cursor: pointer;
 }
-.navBar span.active{
+
+.navBar span.active {
     color: #06D6A0;
 }
-.navBar span:hover{
+
+.navBar span:hover {
     color: #06D6A0;
 }
+
 /* ============== navBar - end =================*/
 
 
 
 /* ============== content - start =================*/
-.content{
+.content {
     width: 90%;
     /* for transition - 2 line */
     min-height: 0;
@@ -110,42 +144,66 @@ body{
     margin: 0 auto 10px;
     padding: 10px;
     line-height: 1.6;
+    -webkit-transition: min-height 0.3s ease-in-out;
+    -o-transition: min-height 0.3s ease-in-out;
     transition: min-height 0.3s ease-in-out;
 }
+
 .tabContent:not(:first-child) {
-    display: none; /* by default tabContents are not displayed except one */
+    display: none;
+    /* by default tabContents are not displayed except one */
 }
-#about{
+
+#about {
     color: #d1d7df;
 }
-#about strong{
+
+#about strong {
     color: #5bdfb3;
 }
-.education-category, .education-category::before{
+
+.education-category,
+.education-category::before {
+    background: -webkit-gradient(linear, left top, left bottom, from(#06D6A0), to(#0d5844));
+    background: -o-linear-gradient(#06D6A0, #0d5844);
     background: linear-gradient(#06D6A0, #0d5844);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: initial;
 }
-#education p{
+
+#education p {
     color: #a1a1a1;
     text-indent: 25px;
 }
-#projects{
+
+#projects {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
-.project{
+
+.project {
     background-color: #9affe4;
     border-left: 4px solid #06D6A0;
     margin: 5px 0;
     padding: 5px 15px;
 }
-#skills{
+
+#skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
-.skill{
+
+.skill {
     padding: 5px 15px;
     /* background-color and border color are selected randomly using javascript */
     /* background-color: hsl(164, 100%, 80%);
@@ -153,6 +211,7 @@ body{
     border-radius: 30px;
     margin: 10px 10px;
 }
+
 /* ============== navBar - end =================*/
 
 
@@ -167,21 +226,32 @@ body{
     border-radius: 50%;
     border: 1px solid #ffffff59;
 }
-@keyframes ripple-effect {
+
+@-webkit-keyframes ripple-effect {
     to {
+        -webkit-transform: scale(15);
         transform: scale(15);
         opacity: 0.01;
     }
 }
+
+@keyframes ripple-effect {
+    to {
+        -webkit-transform: scale(15);
+        transform: scale(15);
+        opacity: 0.01;
+    }
+}
+
 /* ============== ripple effect - end =================*/
 
 
 
 /* responsive */
 @media screen and (min-width: 800px) {
-    .navBar, .content{
+
+    .navBar,
+    .content {
         width: 70%;
     }
 }
-
-
